@@ -3,6 +3,8 @@ package edu.illinois.cs.cs125.lab11;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -38,7 +40,14 @@ public final class MainActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_main);
 
-        startAPICall("192.17.96.8");
+        //startAPICall("192.17.96.8");
+
+        final Button ipButton = findViewById(R.id.lookup_IP);
+        ipButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(final View v) {
+                startAPICall("192.17.96.8");
+            }
+        });
     }
 
     /**
